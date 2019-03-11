@@ -42,5 +42,8 @@ if __name__ == '__main__':
     rospy.on_shutdown(rospy.ServiceProxy('/motor_off', Trigger).call)
     rospy.ServiceProxy('/motor_on', Trigger).call()
     rospy.init_node('logicool_cmd_vel')
+
+    rospy.loginfo("waiting for controller input")
+
     logicool_cmd_vel = JoyTwist()
     rospy.spin()
